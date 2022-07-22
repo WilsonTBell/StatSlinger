@@ -24,7 +24,7 @@ export const ShooterNavBar = () => {
                 <NavLink href="/leaderboard">LeaderBoards</NavLink>
               </NavItem>
             <NavItem>
-              <NavLink href="" onClick={() => {localStorage.removeItem("kandy_user")}}>Logout</NavLink>
+              <NavLink href="" onClick={() => {localStorage.removeItem("stat_slinger")}}>Logout</NavLink>
             </NavItem>          
           </Nav>
         </Collapse>
