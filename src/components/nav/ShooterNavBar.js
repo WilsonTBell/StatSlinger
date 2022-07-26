@@ -9,7 +9,7 @@ export const ShooterNavBar = () => {
 
   return (
     <div>
-      <Navbar color="faded" light>
+      <Navbar dark>
         <NavbarToggler onClick={toggleNavbar} className="me-2" />
         <NavbarBrand href="/" className="me-auto">StatSlinger</NavbarBrand>
         <Collapse isOpen={!collapsed} navbar>

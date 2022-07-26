@@ -5,6 +5,7 @@ export const ShooterViews = () => {
     return <>
     <Routes>
         <Route path="/" element={ <StatList /> } />
+        <Route path="/matches/:matchId" element={ <></>} />
     </Routes>
     </>
 }

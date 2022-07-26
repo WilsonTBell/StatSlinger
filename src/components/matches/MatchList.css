@@ -1,0 +1,23 @@
+.matchCards, .stageCards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 3em;
+}
+
+.matchCard, .stageCard{
+    background-color: rgb(123, 63, 0);
+    margin: 2em
+}
+
+.btn{
+    margin: 0.25em
+}
+
+.statFormModalBody{
+    background-color: rgb(194, 178, 128);
+}
+
+.statFormModalHeader, .statFormModalFooter{
+    background-color: rgb(123, 63, 0);
+}
