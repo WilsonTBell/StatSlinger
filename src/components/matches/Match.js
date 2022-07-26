@@ -5,14 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const Match = ({id, image, name, date, evtFunction}) => {
     const navigate = useNavigate()
 
-    return<Card className="matchCard"
+    return<Card className="matchCard dark"
         inverse
         style={{
           width: '18rem'
         }}
       >
         <img
-          alt="Card image"
+          alt= ""
           src={image}
         />
         <CardBody>

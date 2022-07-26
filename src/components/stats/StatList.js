@@ -57,7 +57,7 @@ export const StatList = () => {
                                                 {match.stages.map((stage)=> {
                                                         return <AccordionItem>
                                                             <AccordionHeader targetId={`stage--${stage.id}`}>
-                                                                Stage {stage.id}
+                                                                {stage.name}
                                                             </AccordionHeader>
                                                             <AccordionBody accordionId={`stage--${stage.id}`}>
                                                                 {match.stats.map((stat) => {

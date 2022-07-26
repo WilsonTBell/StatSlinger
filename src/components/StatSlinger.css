@@ -30,3 +30,12 @@ p {
 .title--main {
   margin-block-end: 0;
 }
+
+.modal-footer{
+    background-color: rgb(123, 63, 0);
+}
+
+.matchCard, .stageCard{
+    background-color: rgb(123, 63, 0);
+    margin: 2em
+}

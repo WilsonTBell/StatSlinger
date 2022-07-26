@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { toBeInTheDocument } from "@testing-library/jest-dom/dist/matchers";
+import { useState } from "react"
 import { Button } from "reactstrap";
 
 export const StatForm = ({matchId, stageId, paramFunction}) => {
@@ -15,6 +16,41 @@ export const StatForm = ({matchId, stageId, paramFunction}) => {
       notes: ""
     })
 
+    const localStatSlinger = localStorage.getItem("stat_slinger")
+    const  StatSlingerObject = JSON.parse(localStatSlinger)
+
+const handleSubmitButtonClick = () => {
+       
+// TODO: wrong stageId being passed every time?? how to fix?
+
+        const statToSendToAPI = {
+            shooterId: StatSlingerObject.id,
+            matchId: parseInt(matchId),
+            stageId: stageId,
+            pistolMisses: parseInt(stat.pistolMisses),
+            rifleMisses: parseInt(stat.rifleMisses),
+            shotgunMisses: parseInt(stat.shotgunMisses),
+            procedural: false,
+            rawTime: parseFloat(stat.rawTime),
+            modifiedTime: parseFloat(stat.modifiedTime),
+            notes: stat.notes
+        }
+
+      
+
+        // TODO: Perform the fetch() to POST the object to the API
+        return fetch(`http://localhost:8088/stats`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(statToSendToAPI)
+        })
+            .then(response => response.json())
+            .then(() => {
+               paramFunction()
+            })
+    }
 
 
     return <>
@@ -128,7 +164,7 @@ export const StatForm = ({matchId, stageId, paramFunction}) => {
                 </div>
             </fieldset>
     </form>
-    <Button color='light' outline onClick={paramFunction}>Submit Stats</Button>{' '}
+    <Button color='light' outline onClick={() => {handleSubmitButtonClick()}}>Submit Stats</Button>{' '}
     </>
 
 
