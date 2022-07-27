@@ -38,7 +38,7 @@ export const StatList = () => {
 
     return <>
     <h1>My Stats</h1>
-    <UncontrolledAccordion
+    <UncontrolledAccordion key={`accordionParent`}
   defaultOpen={[
     '1',
     '2'
@@ -49,40 +49,40 @@ export const StatList = () => {
                 return<>
                 {matches.map(
                         (match) => {if(completedMatch.matchId === match.id && completedMatch.shooterId === StatSlingerObject.id)
-                            return <AccordionItem>
-                                        <AccordionHeader targetId={`match--${match.id}`}>
+                            return <AccordionItem key={`matchAccordion--${match.id}`}>
+                                        <AccordionHeader key={`matchAccordionHeader--${match.id}`} targetId={`match--${match.id}`}>
                                             Match on {match.date}
                                         </AccordionHeader>
-                                            <AccordionBody accordionId={`match--${match.id}`}>
+                                            <AccordionBody key={`matchAccordionBody--${match.id}`} accordionId={`match--${match.id}`}>
                                                 {match.stages.map((stage)=> {
-                                                        return <AccordionItem>
-                                                            <AccordionHeader targetId={`stage--${stage.id}`}>
+                                                        return <AccordionItem key={`stageAccordion--${stage.id}`}>
+                                                            <AccordionHeader key={`stageAccordionHeader--${stage.id}`} targetId={`stage--${stage.id}`}>
                                                                 {stage.name}
                                                             </AccordionHeader>
-                                                            <AccordionBody accordionId={`stage--${stage.id}`}>
+                                                            <AccordionBody key={`stageAccordionBody--${stage.id}`} accordionId={`stage--${stage.id}`}>
                                                                 {match.stats.map((stat) => {
                                                                     if(stat.stageId === stage.id && stat.shooterId === StatSlingerObject.id) 
                                                                     return <>
-                                                                        <List>
-                                                                            <li key="revolverStats">
+                                                                        <List key={`statList--${stat.id}`}>
+                                                                            <li key={`revolverStats--${stat.id}`}>
                                                                                 Misses With Revolvers: {stat.pistolMisses}
                                                                             </li>
-                                                                            <li key="rifleStats">
+                                                                            <li key={`rifleStats--${stat.id}`}>
                                                                                 Misses With Rifle: {stat.rifleMisses}
                                                                             </li>
-                                                                            <li key="shotgunStats">
+                                                                            <li key={`shotgunStats--${stat.id}`}>
                                                                                 Misses With Shotgun: {stat.shotgunMisses}
                                                                             </li>
-                                                                            <li key="proceduralStats">
+                                                                            <li key={`proceduralStats--${stat.id}`}>
                                                                                 Procedural: {stat.procedural ? "🧨" : "No"}
                                                                             </li>
-                                                                            <li key="rawTimeStats">
+                                                                            <li key={`rawTimeStats--${stat.id}`}>
                                                                                 Raw Time: {stat.rawTime}
                                                                             </li>
-                                                                            <li key="modifiedTimeStats">
+                                                                            <li key={`modifiedTimeStats--${stat.id}`}>
                                                                                 Modified Time: {stat.modifiedTime}
                                                                             </li>
-                                                                            <li key="notesStats">
+                                                                            <li key={`notesStats--${stat.id}`}>
                                                                                 Notes: {stat.notes}
                                                                             </li>
                                                                         </List>
