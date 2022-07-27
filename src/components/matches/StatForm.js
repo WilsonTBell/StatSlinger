@@ -20,7 +20,7 @@ export const StatForm = ({matchId, stageId, paramFunction}) => {
 
 const handleSubmitButtonClick = () => {
        
-// TODO: wrong stageId being passed every time?? how to fix?
+
 
         const statToSendToAPI = {
             shooterId: StatSlingerObject.id,
@@ -35,9 +35,6 @@ const handleSubmitButtonClick = () => {
             notes: stat.notes
         }
 
-      
-
-        // TODO: Perform the fetch() to POST the object to the API
         return fetch(`http://localhost:8088/stats`, {
             method: "POST",
             headers: {
