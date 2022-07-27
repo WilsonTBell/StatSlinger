@@ -9,7 +9,9 @@ export const MatchDetails = () => {
     const {matchId} = useParams()
     const [stages, setStages] = useState([])
     const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const [selectedStage, setSelected] = useState(0)
+
+    const toggle = () => {setModal(!modal)};
 
     useEffect(
         () => {
@@ -22,10 +24,17 @@ export const MatchDetails = () => {
         [matchId] // When this array is empty, you are observing initial component state
     )
 
+    useEffect(
+        () => {
+            if(selectedStage > 0){toggle()}
+        },
+        [selectedStage]
+    )
+
     return <>
         <article className="stageCards">
     {stages.map((stage)=>{
-        return<Card className="stageCard"
+        return<Card key={`stage--${stage.id}`} className="stageCard"
         inverse
         style={{
           width: '18rem'
@@ -38,16 +47,16 @@ export const MatchDetails = () => {
           <CardText>
              {stage.notes}
           </CardText>
-          <Button color='light' outline  onClick={toggle}>
+          <Button color='light' outline  onClick={() => setSelected(stage.id)} data-bs-target={`#modal--${stage.id}`}>
             Add Stats
           </Button>
-            <Modal className="statFormModal" isOpen={modal} toggle={toggle}>
+            <Modal key={`modal--${stage.id}`} className="statFormModal" isOpen={modal} toggle={toggle} unmountOnClose={true}>
                 <ModalHeader className="statFormModalHeader text-white" toggle={toggle}>Stat Form</ModalHeader>
                     <ModalBody className="statFormModalBody">
                        <StatForm
                        key={`statForm--${stage.id}`}
                        matchId={matchId}
-                       stageId={stage.id}
+                       stageId={selectedStage}
                        paramFunction={toggle}
                        />
                     </ModalBody>
