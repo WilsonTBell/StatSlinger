@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavBar.css'
 
 export const AdminNavBar = () => {
     const [collapsed, setCollapsed] = useState(true);
@@ -9,7 +10,7 @@ export const AdminNavBar = () => {
   
     return (
       <div>
-        <Navbar color="faded" light>
+        <Navbar dark>
           <NavbarToggler onClick={toggleNavbar} className="me-2" />
           <NavbarBrand href="/" className="me-auto">StatSlinger</NavbarBrand>
           <Collapse isOpen={!collapsed} navbar>
@@ -22,6 +23,9 @@ export const AdminNavBar = () => {
               </NavItem>
               <NavItem>
                 <NavLink href="/leaderboard">LeaderBoards</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/matchform">Add New Match</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/admin">Add New Admin</NavLink>
