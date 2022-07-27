@@ -25,7 +25,7 @@ export const AdminNavBar = () => {
                 <NavLink href="/leaderboard">LeaderBoards</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/matchform">Add New Match</NavLink>
+                <NavLink href="/matchform">Match Management</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/admin">Add New Admin</NavLink>
