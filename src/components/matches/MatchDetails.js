@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { Card, CardBody, CardTitle, CardText, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { StatForm } from "./StatForm";
 import './MatchList.css';
@@ -10,8 +10,12 @@ export const MatchDetails = () => {
     const [stages, setStages] = useState([])
     const [modal, setModal] = useState(false);
     const [selectedStage, setSelected] = useState(0)
+    const navigate = useNavigate()
 
     const toggle = () => {setModal(!modal)};
+
+    const localStatSlinger = localStorage.getItem("stat_slinger")
+    const  StatSlingerObject = JSON.parse(localStatSlinger)
 
     useEffect(
         () => {
@@ -30,6 +34,27 @@ export const MatchDetails = () => {
         },
         [selectedStage]
     )
+
+    const handleComplete = (id) => {
+       
+        const completedMatchToSendToAPI = {
+            matchId: parseInt(id),
+            shooterId: StatSlingerObject.id 
+        }
+
+        // TODO: Perform the fetch() to POST the object to the API
+        return fetch(`http://localhost:8088/completedMatches`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(completedMatchToSendToAPI)
+        })
+            .then(response => response.json())
+            .then(() => {
+                navigate("/matches")
+            })
+    }
 
     return <>
         <article className="stageCards">
@@ -70,5 +95,8 @@ export const MatchDetails = () => {
         )
     }
     </article>
+    <Button color="light" outline onClick={() => handleComplete(matchId)}>
+            Finish
+    </Button>
     </>
 }

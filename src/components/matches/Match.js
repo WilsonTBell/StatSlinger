@@ -25,9 +25,6 @@ export const Match = ({id, image, name, date, evtFunction}) => {
           >
             {date}
           </CardSubtitle>
-          <Button color='light' outline onClick={() => evtFunction(id)}>
-            Mark Complete
-          </Button>
             <Button color="light" outline onClick={() => navigate(`/matches/${id}`)}>
                 Match Stages
             </Button>

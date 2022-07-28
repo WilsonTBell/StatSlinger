@@ -55,28 +55,6 @@ export const MatchList = () => {
         [matches, completedMatches]
     )
 
-    const handleComplete = (id) => {
-       
-        const completedMatchToSendToAPI = {
-            matchId: id,
-            shooterId: StatSlingerObject.id 
-        }
-
-        // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://localhost:8088/completedMatches`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(completedMatchToSendToAPI)
-        })
-            .then(response => response.json())
-            .then(() => {
-                getCompletedMatches()
-            })
-    }
-
-
     return <>
     <article className="matchCards">
     {filteredMatches.map(match=> <Match
@@ -85,7 +63,6 @@ export const MatchList = () => {
         image={match.image}
         name={match.name}
         date={match.date}
-        evtFunction={handleComplete}
         />
         )
     }
