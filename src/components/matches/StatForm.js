@@ -143,7 +143,7 @@ const handleSubmitButtonClick = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="modifiedTime">Modified Time:</label>
+                    <label htmlFor="modifiedTime">Notes:</label>
                     <input
                         required autoFocus
                         type="text"

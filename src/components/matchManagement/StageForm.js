@@ -25,7 +25,7 @@ export const StageForm = () => {
         const stageToSendToAPI = {
             name: stage.name,
             notes: stage.notes,
-            matchId: currentMatchId
+            matchId: parseInt(currentMatchId)
         }
 
         return fetch(`http://localhost:8088/stages`, {

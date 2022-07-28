@@ -65,6 +65,9 @@ export const AdminMatches = () => {
                     <Button color="light" outline onClick={() => deleteMatch(match.id)}>
                         Delete Match
                     </Button>
+                    <Button color="light" outline onClick={() => navigate(`/matchForm/${match.id}`)}>
+                        Add Stages
+                    </Button>
                 </CardBody>
             </Card> 
             }
