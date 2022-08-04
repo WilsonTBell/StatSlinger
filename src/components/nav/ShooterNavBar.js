@@ -20,9 +20,6 @@ export const ShooterNavBar = () => {
               <NavItem>
                 <NavLink href="/guns">My Guns</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="/leaderboard">LeaderBoards</NavLink>
-              </NavItem>
             <NavItem>
               <NavLink href="" onClick={() => {localStorage.removeItem("stat_slinger")}}>Logout</NavLink>
             </NavItem>          

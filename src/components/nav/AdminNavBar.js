@@ -22,9 +22,6 @@ export const AdminNavBar = () => {
                 <NavLink href="/guns">My Guns</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/leaderboard">LeaderBoards</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="/adminMatches">Match Management</NavLink>
               </NavItem>
               <NavItem>

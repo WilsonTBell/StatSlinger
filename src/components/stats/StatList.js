@@ -16,7 +16,7 @@ export const StatList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/matches?_embed=stages&_embed=stats`)
+            fetch(`http://localhost:8088/matches?_embed=stages&_embed=stats&_sort=date&_order=asc`)
             .then(response => response.json())
             .then((matchesArray) => {
                 setMatches(matchesArray)

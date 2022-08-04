@@ -6,6 +6,7 @@ import { MatchList } from "../matches/MatchList"
 import { AdminMatches } from "../matchManagement/AdminMatches"
 import { MatchForm } from "../matchManagement/MatchForm"
 import { StageForm } from "../matchManagement/StageForm"
+import { ShooterList } from "../shooters/ShooterList"
 import { StatList } from "../stats/StatList"
 
 export const AdminViews = () => {
@@ -19,6 +20,7 @@ export const AdminViews = () => {
         <Route path="/matchForm/:currentMatchId" element={ < StageForm/>} />
         <Route path="/guns" element={ < GunList/>} />
         <Route path="/gunForm" element={ < GunForm/>} />
+        <Route path="/admin" element={ < ShooterList/>} />
     </Routes>
     </>
 }
