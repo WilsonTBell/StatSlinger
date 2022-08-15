@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# StatSlinger
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Application Overview
+StatSlinger is a front end development capstone project which is intended for Cowboy Action Shooting clubs and particpiants. It provides them with a resource for displaying upcoming matches as well as allowing individuals to log and view their own stats from previous matches
 
-## Available Scripts
+## Features
+- Ability of Admins to create new matches and associated stages
+- Ability of Admins to grant admin status to other users
+- Ability of all users to view upcoming matches and log their shooting stats for each stage in that match
+- Ability of all users to create and edit a collection of guns accesible only by them
 
-In the project directory, you can run:
+##  Technologies Used
+![image](https://user-images.githubusercontent.com/105528673/183157779-a08151c2-07d4-469a-b1bf-fa409416d6ea.png)
+![image](https://user-images.githubusercontent.com/105528673/183157835-99e6ec8c-701a-445b-ac72-0e9127112edd.png)
+![image](https://user-images.githubusercontent.com/105528673/183157888-59cfa84d-da1f-4adb-acf7-858c87b63a87.png)
+![image](https://user-images.githubusercontent.com/105528673/183157933-3a0c3484-a02a-4734-b7a3-d6b1c2904b83.png)
+![image](https://user-images.githubusercontent.com/105528673/183157976-5543fa85-504e-41ad-9e00-016e5ca1b7e5.png)
+![image](https://user-images.githubusercontent.com/105528673/183158015-89d806bd-2894-46f5-a5cf-e9642f48a8f3.png)
+![image](https://user-images.githubusercontent.com/105528673/183158127-8d8c783d-19ad-4213-af19-1f54d91be8cb.png)
+![image](https://user-images.githubusercontent.com/105528673/183158164-e94a87d3-6bd8-497e-9770-4074141ee75a.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running This Application
 
-### `npm test`
+First, a note about authentication...
+This application uses mock authentication which is purely for demonstration purposes. Therefore the login and registration code written here is completely insecure and would never be implemented in a professional application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone This Repository And Change To The Directory In The Terminal.
+```
+git clone git@github.com:WilsonTBell/StatSlinger.git
+cd StatSlinger
+```
 
-### `npm run build`
+2.Access And Run The Database
+```
+git clone git@github.com:WilsonTBell/statslinger-API.git
+json-server -p 8088 database.json -w
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.Launch the client.
+```
+npm install
+npm start
+```
+Admin Login
+```
+wilson@wilson.com
+```
+Regular User Login
+```
+t@t.com
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ERD
+[DB Diagram ERD](https://dbdiagram.io/d/62d17804cc1bc14cc5c7e8f6)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
